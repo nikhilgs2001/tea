@@ -1,0 +1,364 @@
+<html>
+<head>
+  <title>ALL</title>
+<style type="text/css">
+body{
+ background-image: url("i1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.hi{
+   
+text-align: center;
+color:white;
+font-size: 50px;
+font-size: bold;
+font-size: 50px;
+}
+
+ .hi1{
+  text-align: right;
+  color:black;
+  font-size: 25px;
+ }
+::placeholder {  
+    color: lightblue; 
+} 
+  
+:-ms-input-placeholder { 
+    color: lightblue; 
+} 
+  
+::-ms-input-placeholder {  
+    color: lightblue;
+}
+ .hi2{
+  text-align: left;
+  color: red;
+     font-size: 40px;
+     font-style:helvetica;
+ }
+ table{
+    font-family: arial,sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  th{
+    color:white;
+    font-size: 25px;
+    text-align: left;
+    border: 1px solid white;
+  }
+  
+  .button{
+    color: red;
+    font-size: 25px;
+  }
+input[type=text]{
+  border-color:transparent;
+  background-color: transparent;
+  color:white;
+ padding: 5px;
+  font-size: 25px;
+}
+
+</style>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="hi">
+ TEA or COFFEE
+
+</div>
+<div class="hi1">
+<p><span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear())+" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)); 
+alert("Please enter your ROLL NO for Placing Order THANK YOU!");
+</script>
+</div>
+<br><br><br>
+<div class="hi2">
+
+ALL<br><br>
+  </div>
+  <div class="hh">
+  <table>
+<tr>
+  <th>NO</th>
+  <th>FOOD</th>
+  <th>PRICE</th>
+  <th>QUANTITY</th>
+  </tr>
+<tr>
+  <th>1</th>
+  <th>Tea</th>
+  <th>5 RS</th>
+  <th><input type="text" id="i1"></th>
+  </tr>
+
+<tr>
+  <th>2</th>
+  <th>Coffee</th>
+  <th>10 RS</th>
+  <th><input type="text" id="i2"></th>
+  </tr>
+  <tr>
+  <th>3</th>
+  <th>Milk</th>
+  <th>7 RS</th>
+  <th><input type="text" id="i3"></th>
+  </tr>
+  
+<tr>
+  <th>4</th>
+  <th>Horlicks</th>
+  <th>15 RS</th>
+  <th><input type="text" id="i4"></th>
+  </tr>
+  <tr>
+  <th>5</th>
+  <th>Boost</th>
+  <th>15 RS</th>
+  <th><input type="text" id="i5"></th>
+  </tr>
+<tr>
+  <th>6</th>
+  <th>BournVita</th>
+  <th>20 RS</th>
+  <th><input type="text" id="i6"></th>
+  </tr>
+  <tr>
+  <th>7</th>
+  <th>Hot Badam</th>
+  <th>20 RS</th>
+  <th><input type="text" id="i7"></th>
+  </tr>
+
+<tr>
+  <th>8</th>
+  <th>Cold Coffee</th>
+  <th>50 RS</th>
+  <th><input type="text" id="i8"></th>
+  </tr>
+
+<tr>
+  <th>9</th>
+  <th>Coke</th>
+  <th>45 RS</th>
+  <th><input type="text" id="i9"></th>
+  </tr>
+  <tr>
+  <th>10</th>
+  <th>Sprite</th>
+  <th>35 RS</th>
+  <th><input type="text" id="i10"></th>
+  </tr>
+  <tr>
+  <th>11</th>
+  <th>Pepsi</th>
+  <th>35 RS</th>
+  <th><input type="text" id="i11"></th>
+  </tr>
+  <tr>
+  <th>12</th>
+  <th>Miranda</th>
+  <th>30 RS</th>
+  <th><input type="text" id="i12"></th>
+  </tr>
+<tr>
+  <th>13</th>
+  <th>Egg Samosa</th>
+  <th>15 RS</th>
+  <th><input type="text" id="i13"></th>
+  </tr>
+
+<tr>
+  <th>14</th>
+  <th>Veg Samosa</th>
+  <th>12 RS</th>
+  <th><input type="text" id="i14"></th>
+  </tr>
+  <tr>
+  <th>15</th>
+  <th>Onion Pakoda</th>
+  <th>15 RS</th>
+  <th><input type="text" id="i15"></th>
+  </tr>
+  
+<tr>
+  <th>16</th>
+  <th>Potato Chips</th>
+  <th>10 RS</th>
+  <th><input type="text" id="i16"></th>
+  </tr>
+  <tr>
+  <th>17</th>
+  <th>Corn Chips</th>
+  <th>15 RS</th>
+  <th><input type="text" id="i17"></th>
+  </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </table>  
+  <br><br><br>
+<input type="text" id="l" placeholder="enter rollno" />
+<br><br>
+  <input type="button"  value="Place Order" onclick="m()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+
+ <input type="button"  value="      View or Delete Order" onclick="n()"
+    style="text-align: left;
+  color:red;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/> 
+     <input type="button"  value="    < Back" onclick="n1()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 20px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/><br><br>
+  <script>
+    var config = {
+    apiKey: "AIzaSyAz2BkrEwaxkcD4u24DCHHeaihe5M76pZU",
+    authDomain: "web3-debb7.firebaseapp.com",
+    databaseURL: "https://web3-debb7.firebaseio.com",
+    projectId: "web3-debb7",
+    storageBucket: "web3-debb7.appspot.com",
+};
+firebase.initializeApp(config);
+
+   
+function m(){
+
+
+
+var database = firebase.database();
+
+
+var a1=0,a2=0,a3=0,a4=0,a5=0,a6=0,a7=0,a8=0,a9=0,a10=0,a11=0,a12=0,a13=0,a14=0,a15=0,a16=0,a17=0;
+
+a1=document.getElementById("i1").value;
+a2=document.getElementById("i2").value;
+a3=document.getElementById("i3").value;
+yy=document.getElementById("l").value;
+a4=document.getElementById("i4").value;
+a5=document.getElementById("i5").value;
+a6=document.getElementById("i6").value;
+a7=document.getElementById("i7").value;
+a8=document.getElementById("i8").value;
+a9=document.getElementById("i9").value;
+a10=document.getElementById("i10").value;
+a11=document.getElementById("i11").value;
+a12=document.getElementById("i12").value;
+a13=document.getElementById("i13").value;
+a14=document.getElementById("i14").value;
+a15=document.getElementById("i15").value;
+a16=document.getElementById("i16").value;
+a17=document.getElementById("i17").value;
+
+b1=a1*5;
+b2=a2*10;
+b3=a3*7;
+b4=a4*15;
+b5=a5*15;
+b6=a6*20;
+b7=a7*20;
+b8=a8*50;
+b9=a9*45;
+b10=a10*35;
+b11=a11*35;
+b12=a12*30;
+b13=a13*15;
+b14=a14*12;
+b15=a15*15;
+b16=a16*10;
+b17=a17*15;
+
+
+yy=document.getElementById("result").value="TOTAL="+(b1+b2+b3+b4+b5+b6+b7+b8+b9+b10+b11+b12+b13+b14+b15+b16+b17);
+alert("Your Order Placed  "+`${yy}`);
+
+firebase.database().ref(`${document.getElementById("l").value}`).set({
+
+  Total:"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+`${document.getElementById("result").value}`,
+    Tea:`${a1}`+"&nbsp;"+"&nbsp;"+"Tea",
+    Coffee:`${a2}`+"&nbsp;"+"&nbsp;"+"Coffee",
+    Milk:`${a3}`+"&nbsp;"+"&nbsp;"+"Milk",
+    Horlicks:`${a4}`+"&nbsp;"+"&nbsp;"+"Horlicks",
+    Boost:`${a5}`+"&nbsp;"+"&nbsp;"+"Boost",
+    BournVita:`${a6}`+"&nbsp;"+"&nbsp;"+"BournVita",
+    HotBadam:`${a7}`+"&nbsp;"+"&nbsp;"+"HotBadam",
+    ColdCoffee:`${a8}`+"&nbsp;"+"&nbsp;"+"ColdCoffee",
+    Coke:`${a9}`+"&nbsp;"+"&nbsp;"+"Coke",
+    Sprite:`${a10}`+"&nbsp;"+"&nbsp;"+"Sprite",
+    Pepsi:`${a11}`+"&nbsp;"+"&nbsp;"+"Pepsi",
+    Miranda:`${a12}`+"&nbsp;"+"&nbsp;"+"Miranda",
+    EggSamosa:`${a13}`+"&nbsp;"+"&nbsp;"+"Egg Samosa",
+    SvegSamosa:`${a14}`+"&nbsp;"+"&nbsp;"+"Veg Samosa",
+    OnionPakoda:`${a15}`+"&nbsp;"+"&nbsp;"+"Onion Pakoda",
+    PotatoChips:`${a16}`+"&nbsp;"+"&nbsp;"+"Potato Chips",
+    CornChips:`${a17}`+"&nbsp;"+"&nbsp;"+"Corn Chips"
+});
+
+}
+  
+
+   </script>
+   <script>
+    function n(){
+      window.open("new.html");
+    }
+    function n1(){
+      window.open("index.html");
+    }
+
+  </script>
+<input type="text" id="result"/>
+
+
+
+</body>
+</html>

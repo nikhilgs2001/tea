@@ -1,0 +1,270 @@
+<html>
+<head>
+  <title>HOT</title>
+<style type="text/css">
+body{
+ background-image: url("i1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.hi{
+   
+text-align: center;
+color:white;
+font-size: 50px;
+font-size: bold;
+font-size: 50px;
+}
+::placeholder {  
+    color: lightblue; 
+} 
+  
+:-ms-input-placeholder { 
+    color: lightblue; 
+} 
+  
+::-ms-input-placeholder {  
+    color: lightblue;
+}
+ .hi1{
+  text-align: right;
+  color:black;
+  font-size: 25px;
+ }
+
+ .hi2{
+  text-align: left;
+  color: red;
+     font-size: 40px;
+     font-style:helvetica;
+ }
+ table{
+    font-family: arial,sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  th{
+    color:white;
+    font-size: 25px;
+    text-align: left;
+    border: 1px solid white;
+  }
+  
+  .button{
+    color: red;
+    font-size: 25px;
+  }
+input[type=text]{
+  border-color:transparent;
+  background-color: transparent;
+  color:white;
+ padding: 5px;
+  font-size: 25px;
+}
+
+</style>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="hi">
+ TEA or COFFEE
+
+</div>
+<div class="hi1">
+<p><span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear())+" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)); 
+alert("Please enter your ROLL NO for Placing Order THANK YOU!");
+</script>
+</div>
+<br><br><br>
+<div class="hi2">
+
+HOT<br><br>
+  </div>
+  <div class="hh">
+  <table>
+<tr>
+  <th>NO</th>
+  <th>FOOD</th>
+  <th>PRICE</th>
+  <th>QUANTITY</th>
+  </tr>
+<tr>
+  <th>1</th>
+  <th>Tea</th>
+  <th>5 RS</th>
+  <th><input type="text" id="i"></th>
+  </tr>
+
+<tr>
+  <th>2</th>
+  <th>Coffee</th>
+  <th>10 RS</th>
+  <th><input type="text" id="j"></th>
+  </tr>
+  <tr>
+  <th>3</th>
+  <th>Milk</th>
+  <th>7 RS</th>
+  <th><input type="text" id="k"></th>
+  </tr>
+  
+<tr>
+  <th>4</th>
+  <th>Horlicks</th>
+  <th>15 RS</th>
+  <th><input type="text" id="ho"></th>
+  </tr>
+  <tr>
+  <th>5</th>
+  <th>Boost</th>
+  <th>15 RS</th>
+  <th><input type="text" id="bo"></th>
+  </tr>
+<tr>
+  <th>6</th>
+  <th>BournVita</th>
+  <th>20 RS</th>
+  <th><input type="text" id="bv"></th>
+  </tr>
+  <tr>
+  <th>7</th>
+  <th>Hot Badam</th>
+  <th>20 RS</th>
+  <th><input type="text" id="hb"></th>
+  </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </table>  
+  <br><br><br>
+<input type="text" id="l" placeholder="enter rollno" />
+<br><br>
+  <input type="button"  value="Place Order" onclick="m()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+
+ <input type="button"  value="      View or Delete Order" onclick="n()"
+    style="text-align: left;
+  color:red;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+     <input type="button"  value="    < Back" onclick="n1()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 20px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/><br><br>
+  <script>
+    var config = {
+    apiKey: "AIzaSyAz2BkrEwaxkcD4u24DCHHeaihe5M76pZU",
+    authDomain: "web3-debb7.firebaseapp.com",
+    databaseURL: "https://web3-debb7.firebaseio.com",
+    projectId: "web3-debb7",
+    storageBucket: "web3-debb7.appspot.com",
+};
+firebase.initializeApp(config);
+
+   
+function m(){
+
+
+
+var database = firebase.database();
+
+
+var a1=0,a2=0,a3=0,a4=0,a5=0,a6=0,a7=0;
+var b1=0,b2=0,b3=0,b4=0,b5=0,b6=0,b7=0;
+a1=document.getElementById("i").value;
+a2=document.getElementById("j").value;
+a3=document.getElementById("k").value;
+yy=document.getElementById("l").value;
+a4=document.getElementById("ho").value;
+a5=document.getElementById("bo").value;
+a6=document.getElementById("bv").value;
+a7=document.getElementById("hb").value;
+
+b1=a1*5;
+b2=a2*10;
+b3=a3*7;
+b4=a4*15;
+b5=a5*15;
+b6=a6*20;
+b7=a7*20;
+
+
+yy=document.getElementById("result").value="TOTAL="+(b1+b2+b3+b4+b5+b6+b7);
+alert("Your Order Placed  "+`${yy}`);
+
+firebase.database().ref(`${document.getElementById("l").value}`).set({
+
+  Total:"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+`${document.getElementById("result").value}`,
+    Tea:`${a1}`+"&nbsp;"+"&nbsp;"+"Tea",
+    Coffee:`${a2}`+"&nbsp;"+"&nbsp;"+"Coffee",
+    Milk:`${a3}`+"&nbsp;"+"&nbsp;"+"Milk",
+    Horlicks:`${a4}`+"&nbsp;"+"&nbsp;"+"Horlicks",
+    Boost:`${a5}`+"&nbsp;"+"&nbsp;"+"Boost",
+    BournVita:`${a6}`+"&nbsp;"+"&nbsp;"+"BournVita",
+    HotBadam:`${a7}`+"&nbsp;"+"&nbsp;"+"HotBadam"
+
+});
+
+}
+  
+
+   </script>
+   <script>
+    function n(){
+      window.open("new.html");
+    }
+    function n1(){
+      window.open("index.html");
+    }
+  </script>
+<input type="text" id="result"/>
+
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>DELETE</title>
+<style>
+  body{
+      background-image: url("i1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      font-size: 30px;
+    }
+
+input[type=text]{
+  border-color:transparent;
+  background-color: transparent;
+  color:white;
+ padding: 5px;
+  font-size: 25px;
+}
+
+::placeholder {  
+    color: lightblue; 
+} 
+  
+:-ms-input-placeholder { 
+    color: lightblue; 
+} 
+  
+::-ms-input-placeholder {  
+    color: lightblue;
+}
+
+.button{
+    color: red;
+    font-size: 25px;
+  }
+
+</style>
+
+
+
+
+  </head>
+  <body>
+  <h1>Tea or Coffee</h1>
+    <ul>
+  <span id='answer'></span>
+</ul>
+      <script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear())+" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)); 
+</script>
+<input type="text" id="i" placeholder="enter rollno"><br>
+<br>
+<input type="button"  value="Show Order" onclick="n()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+
+<input type="button"  value="   Completed" onclick="m()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+     <input type="button"  value="     < Back" onclick="m1()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/><br><br>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+     apiKey: "AIzaSyAz2BkrEwaxkcD4u24DCHHeaihe5M76pZU",
+    authDomain: "web3-debb7.firebaseapp.com",
+    databaseURL: "https://web3-debb7.firebaseio.com",
+    projectId: "web3-debb7",
+    storageBucket: "web3-debb7.appspot.com",
+    messagingSenderId: "785410850208",
+    appId: "1:785410850208:web:9f02a8c24c0d49e9b9f8c5",
+    measurementId: "G-V39X60PV6T"
+  };
+    firebase.initializeApp(firebaseConfig);
+    
+    
+    function m(){
+   var database = firebase.database();
+    var rootRef = database.ref(`${document.getElementById("i").value}`);
+    
+    
+  rootRef.remove();  
+  alert("your order is completed");
+  }
+
+  function n(){
+    var rootRef = firebase.database().ref();
+     
+    //creates ref for node
+    var x;
+    x=document.getElementById("i").value;
+    var ref = rootRef.child(`${x}`);
+    
+    // gets values from database and changes html
+    ref.on('value', function(snap) { 
+    //re-initializes answer in html, so doesn't repeat
+    document.getElementById("answer").innerHTML = "";
+    //gets values for each element in data set   
+    snap.forEach(function(child){
+    document.getElementById("answer").innerHTML += "<li>" + child.val() + "</li>";
+        
+    });
+}); 
+  }
+</script>  
+<script>
+function m1(){
+window.open("index.html");
+
+}
+  </script>
+
+</body>
+</html>

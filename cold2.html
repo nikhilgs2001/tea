@@ -1,0 +1,240 @@
+<html>
+<head>
+  <title>COLD</title>
+<style type="text/css">
+body{
+ background-image: url("i1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.hi{
+   
+text-align: center;
+color:white;
+font-size: 50px;
+font-size: bold;
+font-size: 50px;
+}
+::placeholder {  
+    color: lightblue; 
+} 
+  
+:-ms-input-placeholder { 
+    color: lightblue; 
+} 
+  
+::-ms-input-placeholder {  
+    color: lightblue;
+}
+ .hi1{
+  text-align: right;
+  color:black;
+  font-size: 25px;
+ }
+
+ .hi2{
+  text-align: left;
+  color: red;
+     font-size: 40px;
+     font-style:helvetica;
+ }
+ table{
+    font-family: arial,sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  th{
+    color:white;
+    font-size: 25px;
+    text-align: left;
+    border: 1px solid white;
+  }
+  
+  .button{
+    color: red;
+    font-size: 25px;
+  }
+input[type=text]{
+  border-color:transparent;
+  background-color: transparent;
+  color:white;
+ padding: 5px;
+  font-size: 25px;
+}
+
+</style>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="hi">
+ TEA or COFFEE
+
+</div>
+<div class="hi1">
+<p><span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear())+" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)); 
+alert("Please enter your ROLL NO for Placing Order THANK YOU!");
+</script>
+</div>
+<br><br><br>
+<div class="hi2">
+
+COLD<br><br>
+  </div>
+  <div class="hh">
+  <table>
+<tr>
+  <th>NO</th>
+  <th>FOOD</th>
+  <th>PRICE</th>
+  <th>QUANTITY</th>
+  </tr>
+<tr>
+  <th>1</th>
+  <th>Cold Coffee</th>
+  <th>50 RS</th>
+  <th><input type="text" id="i"></th>
+  </tr>
+
+<tr>
+  <th>2</th>
+  <th>Coke</th>
+  <th>45 RS</th>
+  <th><input type="text" id="j"></th>
+  </tr>
+  <tr>
+  <th>3</th>
+  <th>Sprite</th>
+  <th>35 RS</th>
+  <th><input type="text" id="k"></th>
+  </tr>
+  <tr>
+  <th>4</th>
+  <th>Pepsi</th>
+  <th>35 RS</th>
+  <th><input type="text" id="k1"></th>
+  </tr>
+  <tr>
+  <th>5</th>
+  <th>Miranda</th>
+  <th>30 RS</th>
+  <th><input type="text" id="k2"></th>
+  </tr>
+  </table>  
+  <br><br><br>
+<input type="text" id="l" placeholder="enter rollno" />
+<br><br>
+  <input type="button"  value="Place Order" onclick="m()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+
+     
+     
+ <input type="button"  value="      View or Delete Order" onclick="n()"
+    style="text-align: left;
+  color:red;
+  font-weight: 650;
+     font-size: 30px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+
+<input type="button"  value="    < Back" onclick="n1()"
+    style="text-align: left;
+  color:orange;
+  font-weight: 650;
+     font-size: 20px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/><br><br>
+
+  <script>
+    var config = {
+    apiKey: "AIzaSyAz2BkrEwaxkcD4u24DCHHeaihe5M76pZU",
+    authDomain: "web3-debb7.firebaseapp.com",
+    databaseURL: "https://web3-debb7.firebaseio.com",
+    projectId: "web3-debb7",
+    storageBucket: "web3-debb7.appspot.com",
+};
+firebase.initializeApp(config);
+
+   
+function m(){
+
+
+
+var myFirebase = firebase.database();
+
+var a=0,b=0,a1=0,b1=0,yy=0,c1=0,c=0,d=0,e=0;
+a=document.getElementById("i").value;
+b=document.getElementById("j").value;
+c=document.getElementById("k").value;
+d=document.getElementById("k1").value;
+e=document.getElementById("k2").value;
+yy=document.getElementById("l").value
+
+a1=a*50;
+b1=b*45;
+c1=c*35;
+d1=d*35;
+e1=e*30; 
+
+yy=document.getElementById("result").value="TOTAL="+(a1+b1+c1+d1+e1);
+
+alert("Your Order Placed  "+`${yy}`);
+
+firebase.database().ref(`${document.getElementById("l").value}`).set({
+    Total:"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+"&nbsp;"+`${document.getElementById("result").value}`,
+    ColdCoffee:`${a}`+"&nbsp;"+"&nbsp;"+"ColdCoffee",
+    Coke:`${b}`+"&nbsp;"+"&nbsp;"+"Coke",
+    Sprite:`${c}`+"&nbsp;"+"&nbsp;"+"Sprite",
+    Pepsi:`${d}`+"&nbsp;"+"&nbsp;"+"Pepsi",
+    Miranda:`${e}`+"&nbsp;"+"&nbsp;"+"Miranda"
+
+});
+}
+
+  
+
+   </script>
+   <script>
+    function n(){
+      window.open("new.html");
+    }
+    function n1(){
+      window.open("index.html");
+    }
+  </script>
+   
+<input type="text" id="result"/>
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+ background-image: url("i1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+.hi{
+   
+text-align: center;
+color:white;
+font-size: 50px;
+font-size: bold;
+font-size: 50px;
+}
+
+ .hi1{
+  text-align: right;
+  color:black;
+  font-size: 25px;
+ }
+
+ .hi2{
+ 	text-align: left;
+ 	color: red;
+     font-size: 40px;
+     font-style:helvetica;
+ }
+
+</style>
+<script type="text/javascript">
+	
+function openWin1(){
+window.open("hot2.html");
+
+		}
+		function openWin2(){
+			window.open("cold2.html");
+		}
+		function openWin3(){
+			window.open("spicy2.html");
+		}
+
+       function openWin4(){
+			window.open("try8.html");
+		}
+</script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="hi">
+ TEA or COFFEE
+
+</div>
+<div class="hi1">
+<p><span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear())+" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)); 
+</script>
+</div>
+<br><br><br>
+
+	<form>
+
+
+		<input type="button"  value="ONLY HOT" onclick="openWin1()"
+		style="text-align: left;
+ 	color: red;
+ 	font-weight: 900;
+     font-size: 45px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+ 
+		
+	</form>
+<br><br><br><br>
+<form>
+		<input type="button" value="ONLY COLD" onclick="openWin2()"
+		style="text-align: left;
+ 	color: white;
+ 	font-weight: 900;
+     font-size: 45px;border-color: transparent;
+     background-color:Transparent; border: transparent;"/>
+		
+	</form>
+	<br><br><br><br>
+<form>
+		<input type="button" value="ONLY SPICY" onclick="openWin3()"
+		style="text-align: left;
+ 	color: black;
+ 	font-weight: 900;
+     font-size: 45px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/><br><br><br><br>
+ </form>
+ <form>
+     <input type="button" value="ALL" onclick="openWin3()"
+		style="text-align: left;
+ 	color: green;
+ 	font-weight: 900;
+     font-size: 45px;
+     background-color:Transparent; border: transparent;border-color: transparent;"/>
+		
+		
+	</form>
+
+</body>
+</html>
+
